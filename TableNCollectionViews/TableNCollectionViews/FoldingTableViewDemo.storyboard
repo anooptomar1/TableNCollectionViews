@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BMe-y0-znG">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Folding Table View Controller-->
+        <scene sceneID="b9T-jU-MYC">
+            <objects>
+                <viewController id="BMe-y0-znG" customClass="FoldingTableViewController" customModule="TableNCollectionViews" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vEB-Ep-42h"/>
+                        <viewControllerLayoutGuide type="bottom" id="R5M-hm-2RD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wjt-Rl-7UX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="513" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gy6-fR-Uy6">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="513" id="fQI-kt-0AF" customClass="DemoFoldingCell" customModule="TableNCollectionViews" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="513"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fQI-kt-0AF" id="wjA-Pr-EOP">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="513"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qu7-vp-5jV" customClass="RotatedView" customModule="TableNCollectionViews" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="359" height="100"/>
+                                                    <color key="backgroundColor" red="1" green="0.7486912484131869" blue="0.33825414431514067" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="Sp5-zi-RjM"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRC-VQ-BJi">
+                                                    <rect key="frame" x="8" y="122" width="359" height="380"/>
+                                                    <color key="backgroundColor" red="0.53415676317702987" green="0.89550153113902553" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="380" id="2I6-Gd-xVZ"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="aRC-VQ-BJi" firstAttribute="top" secondItem="wjA-Pr-EOP" secondAttribute="topMargin" constant="114" identifier="ContainerViewTop" id="53f-w5-6T2"/>
+                                                <constraint firstItem="aRC-VQ-BJi" firstAttribute="top" secondItem="qu7-vp-5jV" secondAttribute="bottom" constant="14" identifier="ContainerViewTop" id="7ej-ti-k0b"/>
+                                                <constraint firstAttribute="trailing" secondItem="aRC-VQ-BJi" secondAttribute="trailing" constant="8" id="G1k-Du-bYu"/>
+                                                <constraint firstItem="aRC-VQ-BJi" firstAttribute="leading" secondItem="wjA-Pr-EOP" secondAttribute="leading" constant="8" id="Xz9-8i-GHD"/>
+                                                <constraint firstItem="qu7-vp-5jV" firstAttribute="leading" secondItem="wjA-Pr-EOP" secondAttribute="leading" constant="8" id="aky-Op-TcD"/>
+                                                <constraint firstItem="qu7-vp-5jV" firstAttribute="top" secondItem="wjA-Pr-EOP" secondAttribute="top" constant="8" identifier="ForegroundViewTop" id="of8-lz-xMS"/>
+                                                <constraint firstAttribute="trailing" secondItem="qu7-vp-5jV" secondAttribute="trailing" constant="8" id="tQ8-Rs-QhH"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="7ej-ti-k0b"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="containerView" destination="aRC-VQ-BJi" id="Zxm-PO-jfe"/>
+                                            <outlet property="foregroundView" destination="qu7-vp-5jV" id="hBM-Qq-iYy"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Gy6-fR-Uy6" secondAttribute="trailing" id="6mE-ed-S4b"/>
+                            <constraint firstItem="R5M-hm-2RD" firstAttribute="top" secondItem="Gy6-fR-Uy6" secondAttribute="bottom" id="7hy-r5-RFJ"/>
+                            <constraint firstItem="Gy6-fR-Uy6" firstAttribute="leading" secondItem="wjt-Rl-7UX" secondAttribute="leading" id="Vy3-Ip-Brl"/>
+                            <constraint firstItem="Gy6-fR-Uy6" firstAttribute="top" secondItem="vEB-Ep-42h" secondAttribute="bottom" id="iwJ-bQ-sFN"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="Gy6-fR-Uy6" id="PDL-YJ-i0c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dhg-S7-xcx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="641.5" y="83.5"/>
+        </scene>
+    </scenes>
+</document>
